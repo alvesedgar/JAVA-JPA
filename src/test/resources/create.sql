@@ -3,6 +3,7 @@ CREATE TABLE `Book` (
   `title` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
+
 create sequence hibernate_sequence;
 CREATE TABLE OPENJPA_SEQUENCE_TABLE (ID INTEGER NOT NULL, SEQUENCE_VALUE INTEGER, PRIMARY KEY (ID));
 
