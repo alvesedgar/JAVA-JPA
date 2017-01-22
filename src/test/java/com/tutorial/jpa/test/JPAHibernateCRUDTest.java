@@ -72,6 +72,7 @@ public class JPAHibernateCRUDTest extends JPAHibernateTest {
 		em.getTransaction().begin();
 		em.persist(player);
 		em.getTransaction().commit();
+
 		System.out.println("player id:"+player.getId());
 		assertNotNull(player.getId());
 	}

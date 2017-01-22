@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Entity(name = "ATPPlayer")
+@Entity(name = "PLAYER")
 public class Players implements Serializable {
 
 	private static final long serialVersionUID = -2766273286662783500L;
@@ -23,21 +23,21 @@ public class Players implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@Column(name = "player_name")
+	@Column(name = "NAME")
 	private String name;
 
-	@Column(name = "player_surname")
+	@Column(name = "SURNAME")
 	private String surname;
 
-	@Column(name = "player_age")
+	@Column(name = "AGE")
 	private int age;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name = "player_birth")
+	@Column(name = "BIRTH")
 	private Date birthDate;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "player_photos", orphanRemoval = true, targetEntity=Photos.class)
-	private Collection photos;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "player", orphanRemoval = true, targetEntity=Photos.class)
+	private Collection<Photos> photos;
 
 	public int getId() {
 		return id;
@@ -79,11 +79,11 @@ public class Players implements Serializable {
 		this.birthDate = birthDate;
 	}
 
-	public Collection getPhotos() {
+	public Collection<Photos> getPhotos() {
 		return photos;
 	}
 
-	public void setPhotos(Collection photos) {
+	public void setPhotos(Collection<Photos> photos) {
 		this.photos = photos;
 	}
 
